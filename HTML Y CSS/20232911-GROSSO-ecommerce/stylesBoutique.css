@@ -1,0 +1,127 @@
+.container{
+    display: grid;
+    grid-template-rows: 10% 10% 80%;
+    background-color: white;
+    margin: 3rem;
+}
+.nav{
+    display: grid;
+    grid-template-columns: auto auto ;
+    font-family: fantasy;
+    
+    
+}
+
+
+.menu-item{
+    list-style: none;
+    transition: background-color .3s;
+    
+   
+}
+
+.menu-item a:hover{color: rgb(129, 199, 223);}
+
+.products{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    gap: 1rem;
+    padding: 12px 16px;
+}
+
+.middle{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+
+.menu-item a{
+    text-decoration:none;
+    color: black;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto ; 
+    list-style-type: none;
+}
+
+.btn-search{
+    background-color: black; 
+    border: none; 
+    color: white;
+    /* padding: 12px 16px; 
+    font-size: 16px; */ 
+    cursor: pointer; 
+}
+
+.pricelist{
+    
+    
+}
+
+#price{
+    background: black;
+    color: white;
+}
+.pages{
+    text-align: right;
+}
+
+.pages a{
+    color: black;
+    padding: 5px;
+    font-family: monospace;
+    text-decoration: none;
+    transition: background-color .3s;
+    outline: 0.1px solid rgb(223, 221, 221);
+}
+
+#prev{
+    background-color: rgb(207, 203, 203);
+}
+
+.pages a.active {
+    background-color: rgb(76, 172, 175);
+    color: white;
+    border: 1px solid #2e4d58;
+  }
+  
+  .pages a:hover {background-color: #ddd;}
+
+  .art{
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid lightgray;
+
+  }
+
+  a >img{
+    width: 100%;
+    
+  }
+  
+  .art a{
+    text-decoration: none;
+  }
+
+  .art h4{
+    color: rgb(28, 163, 163);
+  }
+
+  .art p{
+    color: darkslategray
+  }
+
+
+
+/* .footer{
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    color: white;
+} */
