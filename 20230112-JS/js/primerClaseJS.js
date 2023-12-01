@@ -1,3 +1,4 @@
+
 //mensajito
 msg = "Hola mundo, estamos arrancando";
 alert(msg);
@@ -47,4 +48,17 @@ console.log("Vas a gastar " + abastecimiento*precioUnidadSnack + " morlacos para
     var gastoComida = presupuestoMaximo/comida;
     alert("Podés gastar " + gastoComida +" monedas en cada comida para que te alcanse la plata durante los "+ diasViaje + " días de viaje.")
 
+// ES6
+    //Ejercicio 1
 
+let nombre = "Gabriela";
+let profesion = "programadora";
+
+console.log(`${nombre} es ${profesion} `);
+
+    //Ejercicio 2
+
+var precioArt = parseFloat(prompt("Ingresar valor del producto"));
+var cantArt = parseInt(prompt("Ingresar la cantidad de artículos que va a comprar"));
+
+alert(`Deberá abonar ${precioArt*cantArt} monedas para finalizar su compra`);
