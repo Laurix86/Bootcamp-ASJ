@@ -31,11 +31,11 @@ function sumarValores(num1, num2){
 //Calculador de abastecimiento de por vida
     //Ejercicio 1
 
-let edad = 37;
+let edadActual = 37;
 let edadMaxima = 73;
 let snackFav = "chizitos";
 let snacksDiarios = 3;
-let abastecimiento = (edadMaxima - edad) * snacksDiarios;
+let abastecimiento = (edadMaxima - edadActual) * snacksDiarios;
 let precioUnidadSnack = 0.03;
 alert("Necesitarás "+ abastecimiento + " " + snackFav +  " para que te alcancen hasta los " + edadMaxima + " años.");
 console.log("Vas a gastar " + abastecimiento*precioUnidadSnack + " morlacos para cubrir ese abastecimiento.");
