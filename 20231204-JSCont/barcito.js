@@ -1,4 +1,4 @@
-let menú = "Las opciones de menú del día son: \n1 - Milanesas con puré - $7.500 \n2- Lasagna - $8.300 \n3- Tallarines - $6.150 \n4- Pechuga grillada con ensalada mixta - $5.800";
+let menu = "Las opciones de menú del día son: \n1 - Milanesas con puré - $7.500 \n2- Lasagna - $8.300 \n3- Tallarines - $6.150 \n4- Pechuga grillada con ensalada mixta - $5.800";
 let bebida = "Para beber puede elegir entre: \n1- Agua - $430 \n2- Vino - $550 \n3- Limonada - $475 \n4- Cerveza - $500";
 let postre = "Para postre hoy tenemos: \n1- Helado - $350 \n2- Flan - $400 \n3- Milkshake - $375";
 let opciones = "Cómo puedo servirle? Elija el número de la opción elegida: \n1- Menú de comidas - \n2- Lista de bebidas - \n3- Elegir un postre - \n4- Charla trivial - \n5- Escuchar un chiste -\n6- Pedir la cuenta - \n7- No quiero nada, ya me voy.";
@@ -15,11 +15,9 @@ op = prompt(`Bienvenido al barcito - \n ${opciones} `);
 
 
 do{
-    console.log("do");
 
     if(op < 1 && op >7){
         op = parseInt(prompt(opciones));
-        console.log("if");
        
     } else{
         console.log("else");
@@ -93,10 +91,10 @@ do{
                 }
                 break;
             case 4:
-                prompt(charla);
+                alert(charla);
                 break;
             case 5:
-                prompt(chiste);
+                alert(chiste);
                 break;
             case 6: 
                 propina = parseInt(prompt(`Su cuenta es de \$${cuenta}, Cuánto quiere agregar de propina?`));
@@ -108,7 +106,7 @@ do{
                 op=0;
                 break;
             default: 
-                prompt("Disculpe, no entendí su elección.");
+                op = parseInt(prompt("Disculpe, no entendí su elección. \n" + opciones));
                 break;
         }
     }
