@@ -17,7 +17,7 @@ while(contador < num){
 console.log("Contador " + contador);
 promedio = suma /contador;
 
-alert(`La sumatoria es = a ${suma} y el promedio es = a ${promedio} `); */
+alert(`La sumatoria es = a ${suma} y el promedio es = a ${promedio} `);  */
 
 
 /* 
@@ -40,7 +40,7 @@ while(numero >=0){
         alert("Ingresó el número cero, por favor ingresar un número positivo o, en su defecto, un número negativo para finalizar.");
     
     }else{
-    contPositivos++;
+        contPositivos++;
     }
     numero = parseInt(prompt("Ingrese otro número entero, recuerde que cuando quiera finalizar debe ingresar un número negativo"));
 }
