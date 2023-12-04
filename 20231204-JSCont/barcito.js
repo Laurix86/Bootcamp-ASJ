@@ -5,68 +5,65 @@ let opciones = "Cómo puedo servirle? Elija el número de la opción elegida: \n
 let chiste = "Algo gracioso";
 let charla = "Una conversación";
 let msgMozo = "Excelente elección, que lo disfrute!";
-let op = 0;
+let op;
 let numMenu = 0;
 let cuenta = 0;
 let propina = 0;
 
 
-op = prompt(`Bienvenido al barcito - \n ${opciones} `);
+alert(`Bienvenido al barcito - `);
 
 
 do{
+    op = parseInt(prompt(opciones));
+    if(op >= 1 && op <= 7){
 
-    if(op < 1 && op >7){
-        op = parseInt(prompt(opciones));
-       
-    } else{
-        console.log("else");
         switch(op){
             case 1: 
-                numMenu = prompt(menu);
+                numMenu = parseInt(prompt(menu));
                 switch (numMenu){
                     case 1: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 7500;
                         break;
                     case 2: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 8300;
                         break;
                     case 3: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 6150;
                         break;
                     case 4: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 5800;
                         break;
                     default: 
-                        prompt("Disculpe, esa opción no está disponible por el momento.");
+                        alert("Disculpe, esa opción no está disponible por el momento.");
                         break;
                 }
                 break;
             case 2: 
-                numMenu = prompt(bebida);
+                numMenu = parseInt(prompt(bebida));
                 switch (numMenu){
                     case 1: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 430;
                         break;
                     case 2: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 550;
                         break;
                     case 3: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 475;
                         break;
                     case 4: 
-                        prompt(msgMozo);
+                        alert(msgMozo);
                         cuenta += 500;
                         break;
                     default: 
-                        prompt("Disculpe, esa opción no está disponible por el momento.");
+                        alert("Disculpe, esa opción no está disponible por el momento.");
                         break;
                 }
                 break;
@@ -98,16 +95,29 @@ do{
                 break;
             case 6: 
                 propina = parseInt(prompt(`Su cuenta es de \$${cuenta}, Cuánto quiere agregar de propina?`));
-                prompt(`Su cuenta total es \$${cuenta+propina}. Muchas gracias por su visita, esperamos volver a verlo pronto.`);
+                alert(`Su cuenta total es \$${cuenta+propina}. Muchas gracias por su visita, esperamos volver a verlo pronto.`);
                 op = 0;
+                cuenta = 0;
+                propina = 0;
                 break;
             case 7:
-                prompt("Gracias, vuelvas prontos!");
-                op=0;
-                break;
+                if(cuenta >0){
+                    alert("Por favor pague la cuenta antes de retirarse.");
+                    break;
+                }else {
+                    alert("Gracias, vuelvas prontos!");
+                    op=0;
+                    
+                    break;
+                }
+                
             default: 
                 op = parseInt(prompt("Disculpe, no entendí su elección. \n" + opciones));
                 break;
         }
+        
+    }else{
+        
+        op = parseInt(prompt(opciones));
     }
 }while(op != 0);
