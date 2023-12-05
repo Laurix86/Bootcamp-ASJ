@@ -45,11 +45,29 @@ let addEscritura = (txt) =>{
 const tomarDatos = (operando) => {
     calculo = parseInt(escritura);
     escritura = "";
+    screen(escritura);
     operacion = operando;
 };
 
 const resultado = () => {
-    
+    switch(operacion){
+        case "+":
+            calculo += parseInt(escritura);
+            screen(calculo);
+            break;
+        case "-":
+            calculo -= parseInt(escritura);
+            screen(calculo);
+            break;
+        case "/":
+            calculo += parseInt(escritura);
+            screen(calculo);
+            break;
+        case "*":
+            calculo *= parseInt(escritura);
+            screen(calculo);
+            break;
+    }
 }
 
 
