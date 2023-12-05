@@ -1,0 +1,16 @@
+let calculo = 0;
+let uno = document.getElementById("btn1");
+let dos = document.getElementById("btn2");
+let tres = document.getElementById("btn3");
+let cuatro = document.getElementById("btn4");
+let cinco = document.getElementById("btn5");
+let seis = document.getElementById("btn6");
+let siete = document.getElementById("btn7");
+let ocho = document.getElementById("btn8");
+let nueve = document.getElementById("btn9");
+let cero = document.getElementById("btn0");
+let borrar = document.getElementById("btnDel");
+let suma = document.getElementById("btnSuma");
+let resta= document.getElementById("btnResta");
+let multip = document.getElementById("btnMult");
+let dividir = document.getElementById("btnDiv");
