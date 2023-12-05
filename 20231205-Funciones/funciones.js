@@ -1,4 +1,4 @@
-const menu = "Las opciones de menú del día son: \n1 - Milanesas con puré - $7.500 \n2- Lasagna - $8.300 \n3- Tallarines - $6.150 \n4- Pechuga grillada con ensalada mixta - $5.800";
+const menu = "Las opciones de menú del día son: \n1 - Milanesas con puré - $7.500 \n2- Lasagna - $8.300 \n3- Tallarines - $6.150 \n4- Pechuga grillada con ensalada mixta - $5.800 \n5- Volver";
 const bebida = "Para beber puede elegir entre: \n1- Agua - $430 \n2- Vino - $550 \n3- Limonada - $475 \n4- Cerveza - $500";
 const postre = "Para postre hoy tenemos: \n1- Helado - $350 \n2- Flan - $400 \n3- Milkshake - $375";
 const opciones = "Cómo puedo servirle? Elija el número de la opción elegida: \n1- Menú de comidas - \n2- Lista de bebidas - \n3- Elegir un postre - \n4- Charla trivial - \n5- Escuchar un chiste -\n6- Pedir la cuenta - \n7- No quiero nada, ya me voy.";
@@ -12,34 +12,51 @@ let propina = 0;
 
 const inicio = () => {
     op = parseInt(prompt(opciones));
-    if(op >= 1 && op <= 7){
-        fxMenu(op);
+    do{
+        if(op >= 1 && op <= 7){
+            fxMenu(op);
 
-    }
-
+        }else{
+            op = parseInt(prompt("Disculpe, no entendí su elección. \n" + opciones));
+        }
+    }while(op != 0);
 
 
 }
 
 const fxMenu = (opt)=>{
-    switch(opt){
-        case 1: fxMenuComida();
-            break;
-        case 2: fxBebidas();
-            break;
-        case 3: fxPostres();
-            break;
-        case 4:
-            alert(charla);
-            break;
-        case 5:
-            alert(chiste);
-            break;
-        case 6: 
-            propina = parseInt(prompt(`Su cuenta es de \$${ticket()}, Cuánto quiere agregar de propina?`));
-            pagado(propina);
-        
-        }
+    if(opt >= 1 && op <= 7){
+        switch(opt){
+            case 1: fxMenuComida();
+                break;
+            case 2: fxBebidas();
+                break;
+            case 3: fxPostres();
+                break;
+            case 4:
+                alert(charla);
+                break;
+            case 5:
+                alert(chiste);
+                break;
+            case 6: 
+                propina = parseInt(prompt(`Su cuenta es de \$${ticket()}, Cuánto quiere agregar de propina?`));
+                pagado(propina);
+                break;
+            case 7:
+                if(cuenta >0){
+                    alert("Por favor pague la cuenta antes de retirarse.");
+                    break;
+                }else {
+                    alert("Gracias, vuelvas prontos!");
+                    op=0;
+                    
+                    break;
+                }
+            }
+    } else {
+        op = parseInt(prompt("Disculpe, no entendí su elección. \n" + opciones));
+    }
 }
 
 const fxMenuComida = () =>{
@@ -61,10 +78,14 @@ const fxMenuComida = () =>{
             alert(msgMozo);
             ticket(5800);
             break;
+        case 5:
+            fxMenu();
+            break;
         default: 
             alert("Disculpe, esa opción no está disponible por el momento.");
             break;
     }
+    
 }
 
 const fxBebidas = () => {
@@ -124,3 +145,4 @@ const pagado = (prop)=> {
     cuenta = 0;
     propina = 0;
 }
+
