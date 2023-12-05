@@ -1,21 +1,21 @@
 let calculo = 0;
-let uno = document.getElementById("btn1");
-let dos = document.getElementById("btn2");
-let tres = document.getElementById("btn3");
-let cuatro = document.getElementById("btn4");
-let cinco = document.getElementById("btn5");
-let seis = document.getElementById("btn6");
-let siete = document.getElementById("btn7");
-let ocho = document.getElementById("btn8");
-let nueve = document.getElementById("btn9");
-let cero = document.getElementById("btn0");
-let borrar = document.getElementById("btnDel");
-let suma = document.getElementById("btnSuma");
-let resta= document.getElementById("btnResta");
-let multip = document.getElementById("btnMult");
-let dividir = document.getElementById("btnDiv");
-let igual = document.getElementById("btnResult");
-let pantalla = document.getElementById("h3Pantalla");
+const uno = document.getElementById("btn1");
+const dos = document.getElementById("btn2");
+const tres = document.getElementById("btn3");
+const cuatro = document.getElementById("btn4");
+const cinco = document.getElementById("btn5");
+const seis = document.getElementById("btn6");
+const siete = document.getElementById("btn7");
+const ocho = document.getElementById("btn8");
+const nueve = document.getElementById("btn9");
+const cero = document.getElementById("btn0");
+const borrar = document.getElementById("btnDel");
+const suma = document.getElementById("btnSuma");
+const resta= document.getElementById("btnResta");
+const multip = document.getElementById("btnMult");
+const dividir = document.getElementById("btnDiv");
+const igual = document.getElementById("btnResult");
+const pantalla = document.getElementById("h3Pantalla");
 let escritura ="";
 let operacion;
 const btnNumero = document.getElementsByClassName("btnNum");
@@ -35,13 +35,19 @@ suma.addEventListener("click", ()=> tomarDatos("+"));
 resta.addEventListener("click", ()=> tomarDatos("-"));
 dividir.addEventListener("click", ()=> tomarDatos("/"));
 multip.addEventListener("click", ()=> tomarDatos("*"));
-igual.addEventListener("click", ()=> resultado() )
+igual.addEventListener("click", ()=> resultado() );
+borrar.addEventListener("click", ()=> borrarTodo());
+
 
 let addEscritura = (txt) =>{
     escritura += txt;
     screen(escritura);
 }
 
+const borrarTodo = () =>{
+    screen("0");
+    escritura = "";
+}
 const tomarDatos = (operando) => {
     calculo = parseInt(escritura);
     escritura = "";
@@ -60,7 +66,7 @@ const resultado = () => {
             screen(calculo);
             break;
         case "/":
-            calculo += parseInt(escritura);
+            calculo /= parseInt(escritura);
             screen(calculo);
             break;
         case "*":

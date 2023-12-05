@@ -13,3 +13,14 @@ efecto.addEventListener("click", function(){
     h2Apellido.style.color = "red";
 })
 
+/* HTML
+
+<button id="1" onClick="mi_funcion(this.id)">1</button>
+
+<button id="2" onClick="mi_funcion(this.id)">2 </button>
+
+JS
+
+ function mi_funcion(elemento) {
+            console.log("ID de Boton = " + elemento);
+  } */
