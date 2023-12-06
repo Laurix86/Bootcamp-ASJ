@@ -23,10 +23,18 @@ if(cantProductos>0){
 
     insertarUl();
 }else{
-
+    carroVacio();
 }
 
-
+function carroVacio(){
+    listadoDetalle.innerHTML = "";
+    listadoPrecios.innerHTML = "";
+    liDetalle.textContent = "No hay productos para mostrar";
+    liPrecio.textContent = "----";
+    total = 0;
+    listadoDetalle.appendChild(liDetalle);
+    listadoPrecios.append(liPrecio);
+}
 function insertarUl(){
     for(let i =0; i<cantProductos;i++){
         
