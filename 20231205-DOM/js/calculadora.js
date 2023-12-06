@@ -24,10 +24,14 @@ const btnOperacion = document.getElementsByClassName("btnOp");
 const modo = document.getElementById("flexSwitchCheckReverse");
 
 modo.addEventListener("click", function(e){
-    if(!e.target.checked){
-        html.data-bs-theme = "dark";
-        html.setAttribute("data-bs-theme", html.getAttribute("data-bs-theme"));
+    if(e.target.checked){
+        html.setAttribute("data-bs-theme", "dark");       
     }
+    if(!e.target.checked){
+        html.setAttribute("data-bs-theme", "light");       
+    }
+   
+ 
 });
 
 /* Reemplazado abajo con e.target
