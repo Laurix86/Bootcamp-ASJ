@@ -7,6 +7,13 @@ input.addEventListener("keyup", function(e){
     txt.innerText = mostrarSinVocales(e.key);
 })
 
+//función superadora resuelve al toque todo
+input.addEventListener("keyup", () => {
+    //escritura += ` ${e.key}`;
+
+    txt.innerText = input.value.replace(/[aáAÁeéEÉiíIÍoOóÓuúUÚ]/g, '_');
+})
+
 
 const mostrarSinVocales = (letra) =>{
     switch(letra.toUpperCase()){
