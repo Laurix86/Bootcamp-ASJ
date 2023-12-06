@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1 class="text-center ">Calculando ...</h1>
+    <div class="row m-5 p-5">
+        <div class="col-10 ">
+            <h1 class="text-center ">Calculando ...</h1>
+        </div>
+        <div class="col-2">
+            <div class="form-check form-switch form-check-reverse">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+                <label class="form-check-label" for="flexSwitchCheckReverse" id="modo">Claro/Oscuro</label>
+            </div>
+        </div>
+    </div>
+    
 
     <div class="container text-center ">
         <div class="row justify-content-md-center">
-            <div class="col">
+            <div class="col p-5">
                 <div class="row justify-content-md-center">
                     <div class="col">
                         <h3 class="p-5 m-3 border-2 " id="h3Pantalla">0</h3>
@@ -31,7 +42,7 @@
                                 <div class="col-3"><button class="btn text-nowrap  btn-outline-primary p-5 m-2 btnNum  " id="btn7" value="7">7</button></div>
                                 <div class="col-3"><button class="btn text-nowrap  btn-outline-primary p-5 m-2 btnNum "  id="btn8" value="8">8</button></div>
                                 <div class="col-3"><button class="btn text-nowrap btn-outline-primary p-5 m-2 btnNum"  id="btn9" value="9">9</button></div>
-                                <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2" id="btnDiv">/</button></div>
+                                <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2 btnOp" id="btnDiv" value="/">/</button></div>
                             </div>
                         </div>
                         <div class="row justify-content-md-center">
@@ -39,7 +50,7 @@
                                 <div class="col-3"><button class="btn text-nowrap  btn-outline-primary p-5 m-2 btnNum "  id="btn4" value="4">4</button></div>
                                 <div class="col-3"><button class="btn text-nowrap  btn-outline-primary p-5 m-2 btnNum" id="btn5" value="5">5</button></div>
                                 <div class="col-3"><button class="btn text-nowrap  btn-outline-primary p-5 m-2 btnNum"  id="btn6" value="6">6</button></div>
-                                <div class="col-3"><button class="btn text-nowrap  btn-outline-info p-5 m-2" id="btnMult">*</button></div>
+                                <div class="col-3"><button class="btn text-nowrap  btn-outline-info p-5 m-2 btnOp" id="btnMult" value="*">*</button></div>
                             </div>
                         </div>
                         <div class="row justify-content-md-center">
@@ -47,7 +58,7 @@
                                 <div class="col-3"><button class="btn text-nowrap  btn-outline-primary p-5 m-2 btnNum" id="btn1" value="1">1</button></div>
                                 <div class="col-3"><button class="btn text-nowrap btn-outline-primary p-5 m-2 btnNum" id="btn2" value="2">2</button></div>
                                 <div class="col-3"><button class="btn text-nowrap btn-outline-primary p-5 m-2 btnNum" id="btn3" value="3">3</button></div>
-                                <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2" id="btnResta">-</button></div>
+                                <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2 btnOp" id="btnResta" value="-">-</button></div>
                             </div>
                         </div>
                         <div class="row justify-content-md-center">
@@ -55,7 +66,7 @@
                                 <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2 " id="btnDel" >Del</button></div>
                                 <div class="col-3"><button class="btn text-nowrap btn-outline-primary p-5 m-2 btnNum" id="btn0" value="0">0</button></div>
                                 <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2 " id="btnResult" >=</button></div>
-                                <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2" id="btnSuma">+</button></div>
+                                <div class="col-3"><button class="btn text-nowrap btn-outline-info p-5 m-2 btnOp" id="btnSuma" value="+">+</button></div>
                             </div>
                         </div>
 
