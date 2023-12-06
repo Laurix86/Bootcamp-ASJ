@@ -11,7 +11,6 @@ input.addEventListener("keyup", function(e){
 const mostrarSinVocales = (letra) =>{
     switch(letra.toUpperCase()){
         case"A": case"E": case"I": case"O": case "U":
-            console.log("vocal");
             return escritura += "_";
         case "BACKSPACE":
             escritura = escritura.slice(0, escritura.length - 1);
@@ -19,7 +18,6 @@ const mostrarSinVocales = (letra) =>{
         case "SHIFT": case "CONTROL": case "CAPSLOCK": case "ENTER":
             return escritura;
         default:
-            console.log("otra letra");
             return escritura += letra;
             
     }
