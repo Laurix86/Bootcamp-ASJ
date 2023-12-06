@@ -6,6 +6,7 @@ const listadoDetalle = document.getElementById("divProd");
 const listadoPrecios = document.getElementById("divPrecio");
 let liDetalle = document.createElement("li");
 let liPrecio = document.createElement("li");
+const precioTotal = document.getElementById("precioFinal");
 
 //buscar claves si hay
 const traerKeys = (cant) =>{
@@ -40,9 +41,10 @@ function insertarUl(){
         
         liDetalle.innerText= arrClaves[i];
         listadoDetalle.appendChild(liDetalle);
-        liPrecio.innerText= arrPrecios[i];
+        liPrecio.innerText= `$${arrPrecios[i]}`;
         listadoPrecios.appendChild(liPrecio);
     }
+    precioTotal.innerText = `$${total}`;
 }
 
 function armarPrecios(arrClaves){
