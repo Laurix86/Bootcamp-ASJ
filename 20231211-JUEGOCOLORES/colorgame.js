@@ -5,11 +5,15 @@ const cuadrados = document.querySelectorAll(".square");
 const spanMsg = document.getElementById("message");
 const reset = document.getElementById("reset")
 const h1 = document.getElementById("h1");
+const easy = document.getElementById("easy");
+const hard = document.getElementById("hard");
 let pickedColor = colors[2];
 let colorsRGB =[]
 let clickedColor 
 
 colorDisplay.innerText = pickedColor;
+
+
 function principal(){
 
     for(let i = 0; i<cuadrados.length; i++){
@@ -26,7 +30,7 @@ function cambiarColor(i){
         cuadrados.forEach(cuadrado => {
             cuadrado.style = `background-color:${pickedColor}`
             h1.style = `background-color:${pickedColor}`
-        
+            
            
         });
 
@@ -46,8 +50,8 @@ function randomColor(){
 }
 
 
-function generateRandomColors(){
-    for(i=0; i < cuadrados.length; i++){
+function generateRandomColors(cantidad){
+    for(i=0; i < cantidad; i++){
         colorsRGB.push(randomColor())
         colors = colorsRGB
   
@@ -64,3 +68,5 @@ function resetGame(){
     principal()
 }
 principal()
+
+reset.addEventListener("click", ()=>resetGame());

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMES CHUCK NORRIS</title>
+</head>
+<body>
+    <div class="container">
+
+        <img src="https://avatars.githubusercontent.com/u/17794049?s=280&v=4" alt="meme default" id="imagen">
+        <h1>Aprobado por Chuck Norris</h1>
+        <button id="btnGet">ACTUALIZAR</button>
+        <h2 id="meme"></h2>
+    </div>
+
+    <script>
+
+        let imagen = document.getElementById("imagen");
+        let h2 = document.getElementById("meme");
+        let getMeme = document.getElementById("btnGet");
+        getMeme.addEventListener("click", () => {
+            fetch(`https://api.chucknorris.io/jokes/random`)
+                .then((response) => response.json()) //convertir a JSON
+                .then((json) => {
+                    console.log(json);
+                    imagen.setAttribute("src", json.icon_url);
+                    imagen.setAttribute("alt", json.value);
+                    h2.innerText = json.value;
+                })
+                .catch((error) => console.log("Ocurrió un error: " + error));
+
+
+        });
+        
+    </script>
+</body>
+</html>

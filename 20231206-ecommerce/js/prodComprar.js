@@ -1,6 +1,6 @@
 const producto = document.getElementsByClassName("prodDetalle")[0].dataset.name;
 const cosa = document.getElementById(producto);
-
+z
 
 cosa.addEventListener("click", ()=>{
    
