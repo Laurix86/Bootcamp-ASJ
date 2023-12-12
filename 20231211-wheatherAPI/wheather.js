@@ -30,3 +30,6 @@ const getBtn = document.getElementById("getInfo");
 const inputCiudad = document.getElementById("inputCiudad");
 
 getBtn.addEventListener("click", ()=>{cargarCiudad(inputCiudad.value)});
+
+
+// https://openweathermap.org/weather-conditions para los iconos

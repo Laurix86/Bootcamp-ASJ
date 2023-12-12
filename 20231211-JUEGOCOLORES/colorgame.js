@@ -1,4 +1,4 @@
-let colors = ["rgb(255, 87, 51)","rgb(243, 255, 0)", "rgb(98, 124, 255)","rgb(255, 82, 242)", "rgb(51, 180, 47)", "rgb(162, 55, 231)"];
+let colors = []/*  = ["rgb(255, 87, 51)","rgb(243, 255, 0)", "rgb(98, 124, 255)","rgb(255, 82, 242)", "rgb(51, 180, 47)", "rgb(162, 55, 231)"] */;
 
 const colorDisplay = document.getElementById("colorDisplay");
 const cuadrados = document.querySelectorAll(".square");
@@ -7,21 +7,34 @@ const reset = document.getElementById("reset")
 const h1 = document.getElementById("h1");
 const easy = document.getElementById("easy");
 const hard = document.getElementById("hard");
-let pickedColor = colors[2];
+let pickedColor/*  = colors[2] */;
 let colorsRGB =[]
 let clickedColor 
 
 colorDisplay.innerText = pickedColor;
 
+easy.addEventListener("click", ()=>{
+    principal(3);
+});
 
-function principal(){
+hard.addEventListener("click", ()=>{
+    principal(6);
+});
+function principal(modo){
 
-    for(let i = 0; i<cuadrados.length; i++){
+    generateRandomColors(modo);
+    for(let i = 0; i<modo; i++){
         cuadrados[i].setAttribute("id", colors[i]);
         cuadrados[i].setAttribute("onclick", `cambiarColor(${i})`);
         cuadrados[i].setAttribute("style", `background-color:${colors[i]}`);
+        if(modo === 3){
+            cuadrados[i+3].style.display = "none";
+            easy.setAttribute("class", "selected");
+            hard.removeAttribute("class", "selected");
+        }
         
     }
+    
 }
 
 function cambiarColor(i){
@@ -52,11 +65,11 @@ function randomColor(){
 
 function generateRandomColors(cantidad){
     for(i=0; i < cantidad; i++){
-        colorsRGB.push(randomColor())
-        colors = colorsRGB
+        colors.push(randomColor())
+        
   
     }
-    pickedColor = colors[(Math.floor(Math.random() * colors.length))]
+    pickedColor = colors[(Math.floor(Math.random() * cantidad)) ];
     colorDisplay.innerText = pickedColor;
 }
 
@@ -64,9 +77,9 @@ function resetGame(){
     colorsRGB=[]
     spanMsg.innerText = "";
     h1.style = `background-color: #232323`
-    generateRandomColors()
-    principal()
+    //generateRandomColors()
+    principal(6)
 }
-principal()
-
+//principal()
+document.body.onload = (principal(6));
 reset.addEventListener("click", ()=>resetGame());
