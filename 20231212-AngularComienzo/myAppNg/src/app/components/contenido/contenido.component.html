@@ -1,0 +1,16 @@
+
+
+<h2>{{titulo}}</h2>
+
+<button (click)="generarAleatorio()">Genenrar número aleatorio</button>
+<h3>{{num}}</h3>
+<button class="btn btn-danger  " (click)="incrementar()">Incrementar</button>
+<button class="btn btn-dark " (click)="decrementar()">Decrementar</button>
+
+<div *ngIf="num >3">
+    <h4>Este es un mensaje</h4>
+</div>
+
+<ul>
+    <li *ngFor="let prod of compras">{{prod}}</li>
+</ul>

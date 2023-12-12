@@ -17,6 +17,9 @@ function cargarCiudad(ciudad){
             document.querySelector(".container").style.visibility = "visible";
 
             nombre.innerText = `${json.name}`;
+            temperatura.innerHTML = (json.main.temp).toFixed(1);
+            iconTemp.setAttribute("src", "https://openweathermap.org/img/wn/"+json.weather[0].icon+"@2x.png");
+            descripcion.innerText = json.weather[0].description;
             console.log(json);
         })
         .catch((error) => "error");
