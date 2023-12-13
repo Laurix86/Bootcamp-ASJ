@@ -7,10 +7,19 @@ import { Component } from '@angular/core';
 })
 export class TarjetaComponent {
   imagenes = [
-    "../../../assets/reloj(1).jpg",
-    "../../../assets/reloj(2).jpg",
-    "../../../assets/reloj(3).jpg"
+    {
+      titulo:"Reloj 01", 
+      source:"../../../assets/reloj(1).jpg"
+    },
+    {
+      titulo:"Reloj 01", 
+      source:"../../../assets/reloj(2).jpg"
+    },
+    {
+      titulo:"Reloj 01", 
+      source:"../../../assets/reloj(3).jpg"
+    }
   ]
 
-  titulos = ["Reloj 01", "Reloj 02", "Reloj 03"];
+  //titulos = ["Reloj 01", "Reloj 02", "Reloj 03"];
 }

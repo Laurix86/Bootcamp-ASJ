@@ -1,21 +1,28 @@
-<div>
-  <contenido></contenido>
-</div>
+<header>
+    <app-nav></app-nav>
+</header>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col">
+<div class="container align-items-center ">
+  <div>
+    <contenido></contenido>
+  </div>
   
-      <div class="row">
-        
-        <div class="col-3" *ngFor="let item of [1, 2, 3]"> <tarjeta></tarjeta></div>
-      </div>
-      <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
+    <otro-componente></otro-componente>
+
+
+    <div class="row">
+      <div class="col">
+    
+        <div class="row">
+          <div class="col">
+            <tarjeta></tarjeta>
+          </div>
+          <div class="col">
+            <tarjeta></tarjeta>
+            
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
 </div>

@@ -6,6 +6,10 @@ import { MiComponenteComponent } from './components/mi-componente/mi-componente.
 import { ContenidoComponent } from './components/contenido/contenido.component';
 import { ListaComponent } from './components/lista/lista.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { NavComponent } from './components/nav/nav.component';
+import { OtraWebComponent } from './components/otra-web/otra-web.component';
+import { OtroComponenteComponent } from './components/otro-componente/otro-componente.component';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +17,11 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
     MiComponenteComponent,
     ContenidoComponent,
     ListaComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    NavComponent,
+    OtraWebComponent,
+    OtroComponenteComponent
+   
   ],
   imports: [
     BrowserModule
