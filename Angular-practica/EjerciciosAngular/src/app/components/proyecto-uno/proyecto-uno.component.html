@@ -1,1 +1,18 @@
-<p>proyecto-uno works!</p>
+<div class="flex-column mb-auto">
+    <h3>Proyecto 01</h3>
+    <h4>ToDo List</h4>
+    <div class="row">
+        <div class="col-5">
+            <input class="input-group " type="text" [(ngModel)]="input_text">
+            <button class="btn btn-info  " type="button" (click)="agregarTarea()" >Agregar</button>
+        </div>
+        <div class="col-7">
+            <ul >
+                <li *ngFor="let elem of lista; index as i">
+                   <label for="">{{i+1}} - {{elem}} </label> 
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
