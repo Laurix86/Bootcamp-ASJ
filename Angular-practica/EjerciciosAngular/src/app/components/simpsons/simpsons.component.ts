@@ -22,6 +22,7 @@ export class SimpsonsComponent {
       this.rolInput = "";
       
     }
+  
   }
 
   //Listado show
