@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 form-group text-center">
+            <h3>Formulario Simpsons</h3>
+            <div class="m-3 p-1 list-group ">
+                <label for="name">Nombre del personaje</label>
+                <input class="input-group-text " id="name" type="text" [(ngModel)]="nameInput">
+                <label for="url">Link a la imagen</label>
+                <input class="input-group-text " id="url" type="text" [(ngModel)]="urlImgInput">
+                <label for="rol">Profesión / Rol</label>
+                <input class="input-group-text " id="rol" type="text" [(ngModel)]="rolInput">
+            </div>
+            <button class="btn-primary " type="button" (click)="addSimpson()">Guardar</button>
+        </div>
+        <div class="col-6">
+            <h3>Simpsons Guardados</h3>
+            <table class="table">
+                <thead >
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                        <th>Rol / Profesión</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elem of arrPersonajes">
+                        <td>{{elem.namePersonaje}}</td>
+                        <td><img src="{{elem.urlImagen}}" alt="" width="51" height="40"></td>
+                        <td>{{elem.rolPersonaje}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

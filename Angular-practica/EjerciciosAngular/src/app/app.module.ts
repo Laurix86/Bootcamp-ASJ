@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProyectoUnoComponent } from './components/proyecto-uno/proyecto-uno.component';
 import { ProyectoDosComponent } from './components/proyecto-dos/proyecto-dos.component';
 import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.component';
+import { SimpsonsComponent } from './components/simpsons/simpsons.component';
 //import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -26,7 +27,8 @@ import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.
     MainComponent,
     ProyectoUnoComponent,
     ProyectoDosComponent,
-    ProyectoTresComponent
+    ProyectoTresComponent,
+    SimpsonsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +43,3 @@ export class AppModule {
   //faCoffee = faCoffee;
  }
 
-/* 
- Agregar opciones para mostrar:
-- Todas las tareas
-- Tareas Completas
-- Tareas Incompletas
-- Tareas eliminadas */
