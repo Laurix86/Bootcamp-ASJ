@@ -40,3 +40,10 @@ import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.
 export class AppModule {
   //faCoffee = faCoffee;
  }
+
+/* 
+ Agregar opciones para mostrar:
+- Todas las tareas
+- Tareas Completas
+- Tareas Incompletas
+- Tareas eliminadas */

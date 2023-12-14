@@ -4,15 +4,28 @@
     <div class="row">
         <div class="col-5">
             <input class="input-group " type="text" [(ngModel)]="input_text">
-            <button class="btn btn-info  " type="button" (click)="agregarTarea()" >Agregar</button>
+            <button class="btn btn-info m-2 " type="button" (click)="addTask()" >Agregar</button>
+            
+            <div class="btn-group-vertical m-3" role="group" aria-label="Vertical button group">
+                <button type="button" class="btn btn-primary  " (click)="setFilter(0)">Todas las tareas</button>
+                <button type="button" class="btn btn-primary" (click)="setFilter(1)">Tareas para hacer</button>
+                <button type="button" class="btn btn-primary" (click)="setFilter(2)">Tareas hechas</button>
+                <button type="button" class="btn btn-primary" (click)="setFilter(3)">Tareas eliminadas</button>
+            </div>
         </div>
         <div class="col-7">
             <ul >
-                <li *ngFor="let elem of lista; index as i">
-                   <label for="">{{i+1}} - {{elem}} </label> 
-                    
+                <li class="list-group-item"  *ngFor="let elem of getFilterList(); index as i"  [ngClass]="(elem.deleted)?'text-decoration-line-through ':'text-decoration-none'">
+                    <p  [ngClass]="(elem.deleted)?'text-decoration-underline':'text-decoration-none'">
+                    <input type="checkbox" (click)="taskDone(i)"  /> 
+
+                     {{i+1}} - {{elem.taskText}} 
+
+                    <a href="#" (click)="taskDelete(i)">Eliminar</a>
+                    </p>
                 </li>
             </ul>
         </div>
     </div>
 </div>
+
