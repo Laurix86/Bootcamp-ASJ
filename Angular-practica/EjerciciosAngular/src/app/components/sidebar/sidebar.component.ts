@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +7,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  constructor(private ruta: ActivatedRoute){}
-  rutaActual = this.ruta;
-  consologuear(algo:any){
-    console.log(algo);
+  //constructor(private ruta: ActivatedRoute){};
+  constructor(private router: Router){};
+  rutaActual = this.router;
+  
+ /*  rutaActual(btnSelected: string): boolean{
+    return btnSelected === this.router.url;
   }
+   */
+  
+  //rutaActual= this.ruta.snapshot;
+  checkRoute(myRoute:string):boolean{
+    
+    return this.rutaActual.routerState.snapshot.url === myRoute;
+  }
+  
 }
+
