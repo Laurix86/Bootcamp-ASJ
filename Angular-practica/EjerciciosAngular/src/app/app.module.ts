@@ -15,6 +15,8 @@ import { ProyectoUnoComponent } from './components/proyecto-uno/proyecto-uno.com
 import { ProyectoDosComponent } from './components/proyecto-dos/proyecto-dos.component';
 import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.component';
 import { SimpsonsComponent } from './components/simpsons/simpsons.component';
+import { PrimosPipesPipe } from './pipes/primos-pipes.pipe';
+
 //import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -29,7 +31,8 @@ import { SimpsonsComponent } from './components/simpsons/simpsons.component';
     ProyectoUnoComponent,
     ProyectoDosComponent,
     ProyectoTresComponent,
-    SimpsonsComponent
+    SimpsonsComponent,
+    PrimosPipesPipe
   ],
   imports: [
     BrowserModule,
