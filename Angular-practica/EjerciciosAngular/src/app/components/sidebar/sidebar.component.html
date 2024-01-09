@@ -6,19 +6,19 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto" >
       <li class="nav-item" >
-        <a routerLink="todoList" class="nav-link link-dark"  aria-current="page" [ngClass]="(checkRoute('/todoList')?'active':'white')">
+        <a routerLink="/todoList" class="nav-link link-dark"  aria-current="page" routerLinkActive="active">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
           ToDO List
         </a>
       </li>
       <li>
-        <a routerLink="simpsons"  class="nav-link link-dark" [ngClass]="(checkRoute('/simpsons')?'active':'white  ')">
+        <a routerLink="/simpsons"  class="nav-link link-dark" routerLink="simpsons" routerLinkActive="active">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
           Simpsons List
         </a>
       </li>
       <li>
-        <a routerLink="proyectoTres" class="nav-link link-dark"[ngClass]="(checkRoute('/proyectoTres')?'active':'white  ')">
+        <a routerLink="/proyectoTres" class="nav-link link-dark"routerLink="proyectoTres" routerLinkActive="active">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
           Proyecto 3
         </a>

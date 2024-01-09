@@ -14,5 +14,5 @@ export class HeaderComponent {
   checkRoute(route:string):boolean{
     return this.ruta.routerState.snapshot.url===route
   }
-
+  
 }

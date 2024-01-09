@@ -1,0 +1,59 @@
+SELECT p.pedido_fecha, p.pedido_total, c.cliente_nombre, c.cliente_apellido, s.socio_mail
+from pedidos p, clientes c, socios s
+WHERE p.id_cliente = c.cliente_id and c.cliente_id = s.id_cliente
+and s.socio_mail LIKE '%.co.%'
+
+----------------------------------------------------------
+SELECT cliente_nombre, cliente_apellido, cliente_telefono, socio_mail 
+from CLIENTES, SOCIOS, PEDIDOS
+where pedidos.id_cliente = clientes.cliente_id
+and socios.id_cliente = clientes.cliente_id
+
+-----------------------------------------
+
+select PROVINCIAS.provincia_nombre
+from PROVINCIAS, CLIENTES
+where clientes.id_provincia = PROVINCIAS.provincias_id
+
+-------------------------------------------------------------------
+
+ALTER TABLE sucursales
+ADD created_at DATE DEFAULT GETDATE() NOT NULL;
+
+----------------------------------------------------
+
+SELECT c.cliente_apellido apellido, c.cliente_nombre nombre, c.cliente_calle calle, 
+c.cliente_nrocalle nro, c.cliente_ciudad ciudad, s.socio_mail "e-mail"
+FROM clientes c
+left join socios s on c.cliente_id = s.id_cliente
+order by apellido, nombre
+
+
+-------------------------------------------------------------------------------------
+
+SELECT * 
+from PEDIDOS
+where pedido_fecha BETWEEN '2023-02-01' and '2023-03-01'
+
+-------------------------------------------------------------
+
+select top 2 percent CLIENTES.cliente_nombre as Nombre, CLIENTES.cliente_apellido as Apellido
+from CLIENTES, PEDIDOS
+where CLIENTES.cliente_id = PEDIDOS.id_cliente
+
+---------------------------------------------------------------------------------------------
+
+SELECT count(socios.socio_id)
+FROM socios, clientes, PROVINCIAS
+where socios.id_cliente = clientes.cliente_id 
+AND PROVINCIAS.provincia_nombre like 'Buenos Aires'
+AND CLIENTES.id_provincia = PROVINCIAS.provincias_id
+
+---------------------------------------------------------
+
+select avg(p.producto_precio_alquiler)
+from PRODUCTOS p
+join PRODUCTOS_TIPO on p.id_tipo = PRODUCTOS_TIPO.tipo_id
+where PRODUCTOS_TIPO.tipo_detalle like 'TV Series'
+
+
