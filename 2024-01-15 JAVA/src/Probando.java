@@ -68,41 +68,41 @@ public class Probando {
 				//Crear un programa donde se introduzcan los tres ángulos 
 				// internos de un triángulo y se determine si el triángulo es válido o no.
 				
-				int sumaAngulos = 0;
-				
-				for(int i = 0; i<3; i++) {
-					System.out.println("Ingrese el valor del ángulo " + (1+i));
-					sumaAngulos += scanner.nextInt();
-					
-				}
-				if(sumaAngulos == 180) {
-					System.out.println("El triángulo es válido");
-				}else {
-					System.out.println("El triángulo no es válido");
-				}
-				
-				System.out.println("------------------------------");
+//				int sumaAngulos = 0;
+//				
+//				for(int i = 0; i<3; i++) {
+//					System.out.println("Ingrese el valor del ángulo " + (1+i));
+//					sumaAngulos += scanner.nextInt();
+//					
+//				}
+//				if(sumaAngulos == 180) {
+//					System.out.println("El triángulo es válido");
+//				}else {
+//					System.out.println("El triángulo no es válido");
+//				}
+//				
+//				System.out.println("------------------------------");
 				// ------------------------------------------------------------
 				// Crear un programa que determine si un string 
 				// introducido por un usuario empieza con un número o con una letra.
-				scanner.nextLine();
-				
-				String input = "";
-				int first;
-				
-				System.out.println("Ingresar una cadena de caracteres: ");
-				input = scanner.nextLine();
-				
-				first = input.charAt(0);
-				
-				
-				if(first < 48 && first > 57) {
-					System.out.println("Lo ingresado no comienza con un número, sino con: "+ input.charAt(0));
-				}else {
-					System.out.println("El primer caracter es el número: " + input.charAt(0));
-				}
-				
-				System.out.println("------------------------------");
+//				scanner.nextLine();
+//				
+//				String input = "";
+//				int first;
+//				
+//				System.out.println("Ingresar una cadena de caracteres: ");
+//				input = scanner.nextLine();
+//				
+//				first = input.charAt(0);
+//				
+//				
+//				if(first < 48 && first > 57) {
+//					System.out.println("Lo ingresado no comienza con un número, sino con: "+ input.charAt(0));
+//				}else {
+//					System.out.println("El primer caracter es el número: " + input.charAt(0));
+//				}
+//				
+//				System.out.println("------------------------------");
 				// -------------------------------------------------------------------
 				// Realizar la suma de todos los números pares entre N y M 
 				// donde N y M los ingresa un usuario.
@@ -136,38 +136,38 @@ public class Probando {
 				// sus divisores positivos, excluido él mismo., Ejemplos 6 = 1 + 2 + 3)
 				
 				
-				int num, sumaDivisores = 0;
-				
-				System.out.println("Ingresar el número a determinar si es perfecto.");
-				num = scanner.nextInt();
-				
-				for(int i = 1; i<num; i++) {
-					if(num%i == 0) {
-						sumaDivisores += i;
-					}
-				}
-				
-				if(num == sumaDivisores) {
-					System.out.println( num + " es un número perfecto.");
-				}else {
-					System.out.println( num + " no es un número perfecto.");
-				}
-				
-				System.out.println("------------------------------");
-				// ---------------------------------------------------------------------------------
-				
-				int renglones;
-				
-				System.out.println("Ingrese el número de renglones");
-				renglones = scanner.nextInt();
-				
-				for(int i =0; i<renglones; i++) {
-					if(i == 0 || i%2==0) {
-						System.out.println("********");
-					}else {
-						System.out.println("*******");
-					}
-				}
+//				int num, sumaDivisores = 0;
+//				
+//				System.out.println("Ingresar el número a determinar si es perfecto.");
+//				num = scanner.nextInt();
+//				
+//				for(int i = 1; i<num; i++) {
+//					if(num%i == 0) {
+//						sumaDivisores += i;
+//					}
+//				}
+//				
+//				if(num == sumaDivisores) {
+//					System.out.println( num + " es un número perfecto.");
+//				}else {
+//					System.out.println( num + " no es un número perfecto.");
+//				}
+//				
+//				System.out.println("------------------------------");
+//				// ---------------------------------------------------------------------------------
+//				
+//				int renglones;
+//				
+//				System.out.println("Ingrese el número de renglones");
+//				renglones = scanner.nextInt();
+//				
+//				for(int i =0; i<renglones; i++) {
+//					if(i == 0 || i%2==0) {
+//						System.out.println("********");
+//					}else {
+//						System.out.println("*******");
+//					}
+//				}
 				scanner.close();
 
 	}
