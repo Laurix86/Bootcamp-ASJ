@@ -19,7 +19,13 @@ public class ATM {
 				case 1: {
 					System.out.println("Cuánto dinero quiere retirar? Su saldo actual es: $" + dineroActual);
 					double retiro = scanner.nextDouble();
+					
+					if(retiro > dineroActual) {
+						retiro = dineroActual;
+					}
+					
 					double saldo = retirar(retiro, dineroActual);
+					
 					
 					if(saldo != dineroActual) {
 						movimientos[contadorMovimientos] = -retiro;
@@ -40,9 +46,11 @@ public class ATM {
 				}
 				case 3: {
 					System.out.println("Su saldo actual es: $" + dineroActual);
+					break;
 				}
 				case 4: {
-					showMovimientos(movimientos);
+					showMovimientos(movimientos, contadorMovimientos);
+					break;
 				}
 				case 5: {
 					System.out.println("Gracias por utilizar nuestros servicios.");
@@ -69,7 +77,10 @@ public class ATM {
 	public static double retirar(double retiro, double saldo){
 		try {
 			
-			saldo -= retiro;
+				saldo -= retiro;
+			
+			
+			
 			
 		} catch (Exception e) {
 			System.out.println("Se produjo un error, no se ha podido realizar la operación.");
@@ -82,7 +93,7 @@ public class ATM {
 	
 	public static double depositar(double deposito, double saldo) {
 		try {
-			saldo -= deposito;
+			saldo += deposito;
 		} catch (Exception e) {
 			System.out.println("Se produjo un error, no se ha podido realizar la operación.");
 			
@@ -100,9 +111,9 @@ public class ATM {
 		return cont;
 	};
 	
-	public static void showMovimientos(Double[] mov) {
+	public static void showMovimientos(Double[] mov, int cont) {
 		System.out.println("A continuación se muestran los últimos 20 movimientos => ");
-		for (int i = 0; i<mov.length; i++) {
+		for (int i = 0; i<cont; i++) {
 			if(mov[i]<0) {
 				System.out.println("Retiró: $" + Math.abs(mov[i]));
 			}else {

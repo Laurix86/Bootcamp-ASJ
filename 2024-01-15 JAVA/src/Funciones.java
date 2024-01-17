@@ -67,11 +67,9 @@ public class Funciones {
 				System.out.print(n);
 				if(n%2 ==0 || n ==0) {
 					arrayNumber[k] = n;
-					System.out.println("par - k = " +k);
 					k++;
 				}else{
 					arrayNumber[j] = n;
-					System.out.println("impar - j = " + j);
 					j--;
 				}
 			
