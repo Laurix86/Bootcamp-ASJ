@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Alumnos</title>
+</head>
+<body>
+
+	<ul id="listado">		
+	</ul>
+	
+	<form >
+		<label for="id">id</label>
+		<input type="number" name="id" id="id">
+		<label for="nombre">Nombre</label>
+		<input type="text" name="nombre" id="nombre">
+		<label for="apellido">Apellido</label>
+		<input type="text" name="apellido" id="apellido">
+		<label for="nota">Nota</label>
+		<input type="number" name="nota" id="nota">
+		
+		<button type"submit" id="btnEnviar" >Guardar</button>
+	</form>
+	
+	<form style="display: none;" id="formEditar">
+		
+		<label for="nombre">Nombre</label>
+		<input type="text" name="nombre" id="nombreEdit">
+		<label for="apellido">Apellido</label>
+		<input type="text" name="apellido" id="apellidoEdit">
+		<label for="nota">Nota</label>
+		<input type="number" name="nota" id="notaEdit">
+		
+		<button type"submit" id="btnEditar" >Guardar</button>
+	</form>
+	<script>
+			fetch("/alumnos")
+		        .then((response) => response.json())
+		        .then((json) => {
+					 json.forEach(elem => {
+						 const modificar = document.createElement("a");
+						 // /alumnos/"+`${elem.id}`
+						 modificar.setAttribute("onclick", "editar(`${elem.id}`)")
+						 const item = document.createElement('li');;
+						item.textContent = `${elem.nombre} ${elem.apellido} ${elem.nota} `;
+						listado.appendChild(item);
+						listado.appendChild(modificar)
+					 })
+		        })
+		        .catch((error) => "error");
+			
+			
+			function editar(id){
+				const formEditar = document.getElementById("formEditar");
+				//let id = document.getElementById("idEdit");
+		        let nombre = document.getElementById("nombreEdit");
+		        let apellido = document.getElementById("apellidoEdit");
+		        let nota = document.getElementById("notaEdit");
+		        
+		        
+				fetch("/alumnos/"+id)
+		        .then((response) => response.json())
+		        .then((json) => {
+					 nombre.value= `${json[0].nombre}`
+					 apellido.value= `${json[0].apellido}`
+					 nota.value= `${json[0].nota}`
+		        })
+		        .catch((error) => "error");
+				
+			}
+	
+		    
+		        
+		let btnSubmit = document.getElementById("btnEnviar");
+		
+		
+		
+		btnSubmit.addEventListener("click", (e)=>{
+			e.preventDefault();
+			
+				let id = document.getElementById("id").value;
+		        let nombre = document.getElementById("nombre").value;
+		        let apellido = document.getElementById("apellido").value;
+		        let nota = document.getElementById("nota").value;
+        
+        
+			fetch("/alumno", {
+              method: "POST",
+              body: JSON.stringify({
+				  	id: parseInt(id),
+					nombre: nombre,
+					apellido: apellido,
+					nota: parseInt(nota)} 
+					),
+              headers: {"Content-type": "application/json"}
+                 })
+                  .then(response => response.json()) 
+                  .then(json => {
+					 json.forEach(elem => {
+						 const item = document.createElement('li');;
+						item.textContent = `${elem.nombre} ${elem.apellido} ${elem.nota} `;
+						listado.appendChild(item);
+					 })
+		        })
+                  .catch(err => console.log(err));
+			
+		})
+	
+	
+	</script>
+	
+</body>
+</html>
