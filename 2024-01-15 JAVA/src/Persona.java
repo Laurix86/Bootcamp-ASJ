@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Persona {
 	String nombre, DNI;
@@ -33,6 +34,7 @@ public class Persona {
 		this.altura = 0;
 	}
 
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -90,6 +92,35 @@ public class Persona {
 		return dni;
 		
 	}
+
+	public int calcularIMC() {
+		Scanner sc = new Scanner(System.in);
+		double resultado;
+		int calculo = -2;
+		
+		if(this.peso == 0) {
+			System.out.println("Falta información sobre el peso, por favor ingresarla: ");
+			this.setPeso(sc.nextDouble());
+		}
+		if(this.altura == 0) {
+			System.out.println("Falta información sobre la altura, por favor ingresarla: ");
+			this.setAltura(sc.nextDouble());
+		}
+		
+		resultado = (this.peso / (Math.pow(this.altura, 2)));
+		
+		if(resultado < 20) {
+			calculo = -1;
+		} else if(resultado >= 20 && resultado <=25) {
+			calculo = 0;
+		} else if(resultado > 25) {
+			calculo = 1;
+		}
+		
+		return calculo;
+	}
+
+	
 }
 
 /* Crear una clase llamada Persona que siga las siguientes condiciones:
