@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms'
 import { routing } from './app-routes';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +17,8 @@ import { ProyectoDosComponent } from './components/proyecto-dos/proyecto-dos.com
 import { ProyectoTresComponent } from './components/proyecto-tres/proyecto-tres.component';
 import { SimpsonsComponent } from './components/simpsons/simpsons.component';
 import { PrimosPipesPipe } from './pipes/primos-pipes.pipe';
+import { TodolistService } from './services/todolist.service';
+
 
 //import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
@@ -39,9 +42,10 @@ import { PrimosPipesPipe } from './pipes/primos-pipes.pipe';
     NgbModule,
     FormsModule, 
     FontAwesomeModule,
-    routing
+    routing,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TodolistService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

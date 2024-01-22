@@ -16,14 +16,16 @@
         <div class="col-7">
             <ul >
                 <li class="list-group-item"  *ngFor="let elem of getFilterList(); index as i"  [ngClass]="(elem.deleted)?'text-decoration-line-through ':'text-decoration-none'">
-                    <p  [ngClass]="(elem.deleted)?'text-decoration-underline':'text-decoration-none'">
-                    <input type="checkbox" (click)="taskDone(i)"  /> 
+                    <p  [ngClass]="(elem.deleted)?'text-decoration-underline':'text-decoration-none'" [ngClass]="(elem.done) ? 'checked' : 'text-decoration-none'">
+                    <input type="checkbox" (click)="taskDone(elem.id)"  [checked]="elem.done" /> 
 
-                     {{i+1}} - {{elem.taskText}} 
+                     {{elem.id}} - {{elem.nombre}} 
 
-                    <a href="#" (click)="taskDelete(i)">Eliminar</a>
+                    <a href="#" (click)="taskDelete(elem.id)">Eliminar</a>
                     </p>
                 </li>
+
+                
             </ul>
         </div>
     </div>
