@@ -3,12 +3,15 @@ package com.bootcamp.todolist.models;
 
 import java.util.Date;
 
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="tareas")
@@ -19,9 +22,10 @@ public class TareaModel {
 	@Column(unique = true, nullable = false)
 	private Integer id;
 	
-	@Column(nullable = false)
+	@NotNull(message = "El nombre no puede ser nulo")
 	private String nombre;
 	
+	@NotBlank(message = "La descripción no puede estar vacía")
 	private String descripcion;
 	
 	private Date fecha;
